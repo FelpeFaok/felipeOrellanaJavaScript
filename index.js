@@ -33,7 +33,7 @@
 
 let consulta1 = prompt("Desea Registrarse? ingrese 1");
 
-if (consulta1 = 1){
+if (consulta1 === "1"){
     class Usuario{
         constructor(nombre, email, clave){
             this.nombre = nombre;
@@ -49,16 +49,18 @@ if (consulta1 = 1){
         let email = prompt("Ingrese su email");
         let clave = prompt("Ingrese su clave");
         let usuarios = new Usuario(nombre, email, clave);
-        productos.push(usuarios);
+        usuario.push(usuarios);
     }
-}
     console.log(usuario);
+}else{
+    console.log("no se a registrado");
+}
 
 // ingreso de datos para productos
 
 let consulta2 = prompt("Desea agregar 5 productos? introdusca la tecla 1");
 
-if (consulta1 = 1){
+if (consulta2 === "1"){
     class Producto{
         constructor(img, precio, nombreProducto){
             this.img = img;
@@ -66,16 +68,16 @@ if (consulta1 = 1){
             this.nombreProducto = nombreProducto;       
         }
     }
-
     const productos = [];
-
     for (let i = 0; i < 5; i++) {
-
         let img = prompt("Ingrese HTML de su producto");
         let precio = prompt("Ingrese precio de su producto");
         let nombre = prompt("Ingrese nombre de su producto");
         let card = new Producto(img, precio, nombre);
         productos.push(card);
     }
+    console.log(productos);
+}else{
+    console.log("no a ingresado ningun producto");
 }
-console.log(productos);
+
