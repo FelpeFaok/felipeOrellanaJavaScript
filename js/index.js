@@ -14,9 +14,9 @@ class ElementoCarrito {
   }
 }
 
-/**
-* Definiciones de constantes
-*/
+// /**
+// * Definiciones de constantes
+// */
 const estandarPesoChileno = new Intl.NumberFormat('es-CL', {currency: "CLP", style: "currency"});
 
 //Arrays donde guardaremos catálogo de productos y elementos en carrito
