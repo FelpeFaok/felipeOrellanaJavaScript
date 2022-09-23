@@ -84,7 +84,7 @@ function dibujarCarrito() {
           inputCantidadProducto.addEventListener('change', (ev) => {
               let nuevaCantidad = ev.target.value;
               elemento.cantidad = nuevaCantidad;
-
+              contadorNumeroProducto();  
               dibujarCarrito();
           });
 
@@ -95,7 +95,7 @@ function dibujarCarrito() {
             
               let indiceEliminar =  elementosCarrito.indexOf(elemento);
               elementosCarrito.splice(indiceEliminar,1);
-              
+              contadorNumeroProducto();
               dibujarCarrito();
           });
 
@@ -169,17 +169,8 @@ function crearCard(producto) {
           let elementoCarrito = new ElementoCarrito(producto, 1);
           elementosCarrito.push(elementoCarrito);
       }
-      const valorContadorInicial = 0;
-      let contadorUnidades = elementosCarrito.reduce(
-        (previousValue, currentValue)=> previousValue + currentValue.cantidad, valorContadorInicial);
-
-      if( contadorUnidades){
-        toggleMyModal.innerHTML="<img src=./img/carrito-de-compras-48.png alt=carrito>";
-        let i = document.createElement("i");
-        i.innerHTML= `<p>${contadorUnidades}</p>`;
-        toggleMyModal.append(i);
-      }    
-
+     
+      contadorNumeroProducto();
       dibujarCarrito();
 
       swal({
@@ -209,6 +200,19 @@ function crearCard(producto) {
 
   return carta;
 
+}
+
+const contadorNumeroProducto = () => {
+    const valorContadorInicial = 0;
+    const contadorUnidades = elementosCarrito.reduce(
+      (previousValue, currentValue)=> previousValue + currentValue.cantidad, valorContadorInicial);
+    
+    if( elementosCarrito.length != 0){
+      toggleMyModal.innerHTML="<img src=./img/carrito-de-compras-48.png alt=carrito>";
+      let i = document.createElement("i");
+      i.innerHTML= `<p>${contadorUnidades}</p>`;
+      toggleMyModal.append(i);
+    }    
 }
 
 function dibujarCatalogoProductos() {
