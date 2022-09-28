@@ -201,19 +201,27 @@ function crearCard(producto) {
   return carta;
 
 }
+const borrarContadorNumero = () => {
 
+};
+const contador = document.getElementById(`contador`)
 const contadorNumeroProducto = () => {
     const valorContadorInicial = 0;
     const contadorUnidades = elementosCarrito.reduce(
-      (previousValue, currentValue)=> previousValue + currentValue.cantidad, valorContadorInicial);
+        (previousValue, currentValue) => previousValue + currentValue.producto.precio*currentValue.cantidad/currentValue.producto.precio,
+       valorContadorInicial
+      );
     
     if( elementosCarrito.length != 0){
-      toggleMyModal.innerHTML="<img src=./img/carrito-de-compras-48.png alt=carrito>";
-      let i = document.createElement("i");
-      i.innerHTML= `<p>${contadorUnidades}</p>`;
-      toggleMyModal.append(i);
-    }    
-}
+      contador.innerHTML="";
+      let div = document.createElement("div");
+      div.innerHTML= `<p>${contadorUnidades}</p>`;
+      contador.append(div);
+    }  else {
+        contador.innerHTML="";
+    }  
+
+};
 
 function dibujarCatalogoProductos() {
   contenedorProductos.innerHTML = "";
