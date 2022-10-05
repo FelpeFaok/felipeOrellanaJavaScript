@@ -1,0 +1,20 @@
+[
+{"id": 1, "nombre":"Audifonos", "precio":100, "foto":"./img/1024accesorio1.jpg"},    
+{"id": 2, "nombre":"Teclado", "precio":200, "foto":"./img/1024accesorio2.jpg"},
+{"id": 3, "nombre":"Mause", "precio":300, "foto":"./img/1024accesorio3.jpg"},
+{"id": 4, "nombre":"Mause + Teclado", "precio":400, "foto":"./img/1024accesorio4.jpg"},
+{"id": 5, "nombre":"Parlantes", "precio":500, "foto":"./img/1024accesorio5.jpg"},
+{"id": 6, "nombre":"Silla", "precio":600, "foto":"./img/1024accesorio6.jpg"},
+{"id": 7, "nombre":"GPU 1", "precio":700, "foto":"./img/1024gpu1.jpg"},
+{"id": 8, "nombre":"GPU 2", "precio":800, "foto":"./img/1024gpu2.jpg"},
+{"id": 9, "nombre":"GPU 3", "precio":900, "foto":"./img/1024gpu3.jpg"},
+{"id": 10, "nombre":"GPU 4", "precio":1000, "foto":"./img/1024gpu4.jpg"},
+{"id": 11, "nombre":"GPU 5", "precio":1100, "foto":"./img/1024gpu5.jpg"},
+{"id": 12, "nombre":"GPU 6", "precio":1200, "foto":"./img/1024gpu6.jpg"},
+{"id": 13, "nombre":"Monitor 1", "precio":1300, "foto":"./img/1024monitor1.jpg"},
+{"id": 14, "nombre":"Monitor 2", "precio":1400, "foto":"./img/1024monitor2.jpg"},
+{"id": 15, "nombre":"Monitor 3", "precio":1500, "foto":"./img/1024monitor3.jpg"},
+{"id": 16, "nombre":"Monitor 4", "precio":1600, "foto":"./img/1024monitor4.jpg"},
+{"id": 17, "nombre":"Monitor 5", "precio":1700, "foto":"./img/1024monitor5.jpg"},
+{"id": 18, "nombre":"Monitor 6", "precio":1800, "foto":"./img/1024monitor6.jpg"}
+]
