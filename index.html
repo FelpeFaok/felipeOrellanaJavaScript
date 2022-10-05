@@ -17,7 +17,11 @@
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">INCROSTORE</a>
-            <!-- Button trigger modal -->
+            <!-- Button trigger modal login-->
+            <button id="toggleMyModalLogin" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalLogin" >
+                <img src="./img/login.png" alt="login">
+                <p>Login</p>
+            <!-- Button trigger modal carrito-->
             <button id="toggleMyModal" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >
                 <img src="./img/carrito-de-compras-48.png" alt="carrito">
                 <div id="contador"></div>
@@ -25,7 +29,40 @@
         </div>
     </nav>
     
-    <!-- Modal -->
+        <!-- Modal login-->
+        <div class="modal fade" id="exampleModalLogin" tabindex="-1" aria-labelledby="exampleModalLabelLogin" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" type="button" id="exampleModalLabelLogin">Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div id="login">
+                                <form id="loginform">
+                                    <input id="nombreUsuario" type="text" name="usuario" placeholder="Usuario" required>
+                                    
+                                    <input type="password" placeholder="Contraseña" name="password" required>
+                                </form>
+                                <div class="pie-form">
+                                    <a href="#">¿Perdiste tu contraseña?</a>
+                                    <a href="#">¿No tienes Cuenta? Registrate</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Login</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <br />
+    
+    <!-- Modal carrito-->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
