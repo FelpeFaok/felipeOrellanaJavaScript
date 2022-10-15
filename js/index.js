@@ -1,3 +1,11 @@
+// Definiciones de constantes
+const estandarPesoChileno = new Intl.NumberFormat('es-CL', {currency: "CLP", style: "currency"});
+const elementosCarrito = [];
+const elementosUsuario = [];
+const contenedorProductos = document.getElementById('contenedor-productos');
+const contenedorCarritoCompras = document.querySelector("#items")
+const contenedorFooterCarrito = document.querySelector("#footer");
+
 
 // cargar elementos desde una "api"
 const traerDatos = async () => {
@@ -28,16 +36,20 @@ const traerDatos = async () => {
     }
 }
 
-// Definiciones de constantes
-const estandarPesoChileno = new Intl.NumberFormat('es-CL', {currency: "CLP", style: "currency"});
-const elementosCarrito = [];
-const contenedorProductos = document.getElementById('contenedor-productos');
-const contenedorCarritoCompras = document.querySelector("#items")
-const contenedorFooterCarrito = document.querySelector("#footer");
-
-// Ejecución de funciones
-traerDatos();
-dibujarCarrito();
+const precargarCarrito = () => {
+    let carritoLocalStorage = localStorage.getItem("carritoIncrostore");
+    if(carritoLocalStorage) {
+        let arrayCarritoJson = JSON.parse(carritoLocalStorage)
+        arrayCarritoJson.forEach(elementoJson => {
+            let elemento = new ElementoCarrito(elementoJson.producto, elementoJson.cantidad);
+            elementosCarrito.push(elemento);
+            
+        });
+        
+        dibujarCarrito();
+        contadorNumeroProducto();
+    }
+}
 
 // Definiciones de funciones
 function dibujarCarrito() {
@@ -64,6 +76,7 @@ function dibujarCarrito() {
                 elemento.cantidad = nuevaCantidad;
                 contadorNumeroProducto();  
                 dibujarCarrito();
+                localStorage.setItem("carritoIncrostore", JSON.stringify(elementosCarrito));
             });
 
             //Agregar evento a eliminar producto
@@ -74,6 +87,7 @@ function dibujarCarrito() {
                 elementosCarrito.splice(indiceEliminar,1);
                 contadorNumeroProducto();
                 dibujarCarrito();
+                localStorage.setItem("carritoIncrostore", JSON.stringify(elementosCarrito)); 
             });
         }
     );
@@ -139,7 +153,7 @@ const removerProductoCarrito = (elementoAEliminar) => {
             let elementoCarrito = new ElementoCarrito(producto, 1);
             elementosCarrito.push(elementoCarrito);
         }
-        
+        localStorage.setItem("carritoIncrostore", JSON.stringify(elementosCarrito));
         contadorNumeroProducto();
         dibujarCarrito();
 
@@ -187,4 +201,9 @@ const contadorNumeroProducto = () => {
             contador.innerHTML="";
         }  
     };
+
+    // Ejecución de funciones
+traerDatos();
+dibujarCarrito();
+
 
